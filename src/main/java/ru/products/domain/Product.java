@@ -22,4 +22,8 @@ public class Product {
     public int getPrice() {
         return price;
     }
+
+    public boolean matches(String search) {
+        return search.equalsIgnoreCase(String.valueOf(getName()));
+    }
 }
