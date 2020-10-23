@@ -29,8 +29,8 @@ class ProductManagerTest {
     public void tesFindById() {
         Product product = new Product(4, "4", 4);
         manager.saveProduct(product);
-        assertEquals(manager.searcyBy("4").length, 1);
-        Product product4 = manager.searcyBy("4")[0];
+        assertEquals(manager.searchBy("4").length, 1);
+        Product product4 = manager.searchBy("4")[0];
         assertEquals(product4.getId(), 4);
         assertEquals(product4.getName(), "4");
         assertEquals(product4.getPrice(), 4);
@@ -40,8 +40,8 @@ class ProductManagerTest {
     public void tesFindByManufacturer() {
         Smartphone smartphone = new Smartphone(4, "IX", 4, "Apple");
         manager.saveProduct(smartphone);
-        assertEquals(manager.searcyBy("Apple").length, 2);
-        Smartphone smartphone1 = (Smartphone) manager.searcyBy("Apple")[0];
+        assertEquals(manager.searchBy("Apple").length, 2);
+        Smartphone smartphone1 = (Smartphone) manager.searchBy("Apple")[0];
         assertEquals(smartphone1.getId(), 3);
         assertEquals(smartphone1.getName(), "X");
         assertEquals(smartphone1.getPrice(), 5);
@@ -50,8 +50,8 @@ class ProductManagerTest {
 
     @Test
     public void tesFindBook() {
-        assertEquals(manager.searcyBy("Пушкин").length, 1);
-        Book book = (Book) manager.searcyBy("Пушкин")[0];
+        assertEquals(manager.searchBy("Пушкин").length, 1);
+        Book book = (Book) manager.searchBy("Пушкин")[0];
         assertEquals(book.getId(), 1);
         assertEquals(book.getName(), "Капитанская дочка");
         assertEquals(book.getPrice(), 10);
@@ -60,11 +60,11 @@ class ProductManagerTest {
 
     @Test
     public void tesFindBookByName() {
-        assertEquals(manager.searcyBy("Капитанская дочка").length, 1);
+        assertEquals(manager.searchBy("Капитанская дочка").length, 1);
     }
 
     @Test
     public void tesFindSmartPhoneByName() {
-        assertEquals(manager.searcyBy("X").length, 1);
+        assertEquals(manager.searchBy("X").length, 1);
     }
 }
